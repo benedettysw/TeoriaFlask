@@ -1,0 +1,29 @@
+
+.caja{
+    width: 80%;
+    border: 5px solid black;
+    margin: 4rem auto;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px red;
+    max-width: 600px;
+
+
+}
+
+
+input{
+    padding: 10px;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    text-transform: uppercase;
+}
+
+
+button{
+    padding: 10px 13px;
+    border-radius: 10px;
+    border: none;
+    background-color: lightblue;
+    cursor: pointer;
+}

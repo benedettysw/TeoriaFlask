@@ -1,25 +1,34 @@
-# Flask es un microframework ----- 💀
-
-from flask import Flask
+from conexion import myweb , db , render_template 
 
 
-
-# Flask es una clase del modulo flask
-# __name__ es una variable que 'PYTHON' asigna a un script cuando se ejecuta
-
-myweb = Flask(__name__)
-
-# Ahora myweb es una instancia de la app Flask 
+#Importacion del metodo , ruta o accion a procesar 
+from Endpoint.Guardar import routes_guardar
 
 
-# Que es un decorador?
+#Importacion de las tablas , se crean al momento de ejecutar el programa 
+from Model.guardar import registros
+
+
+
+# Agrupa , envuelve un  metodo exportar ,  organizando mejor la aplicación
+myweb.register_blueprint(routes_guardar , url_prefix ="/Guardar")
+
+
+
+
+
+
+# Que es un decorador? 
 
 # Un decorador es una función que modifica el comportamiento de otra función sin cambiar su código directamente. Es como "envolver" una función con funcionalidad adicional.
 
 @myweb.route('/')
 def home():             #Es un bloque de codigo reutilizable
-    return 'Hola Mundo!' #es una declaracion que se usa para devolver un valor y normalmente se usa dentro de una funcion
+    return render_template('formulario.html')  #Renderizar , mostrar una plantilla htlml 
 
+@myweb.route('/saludo')
+def saludo():
+    return "Hola mundo" #es una declaracion que se usa para devolver un valor y normalmente se usa dentro de una funcion
 
 
 if __name__ == '__main__': #MAIN es una cadena especial que el interprete de python asigna a la variable __name__ cuando se ejecuta un script

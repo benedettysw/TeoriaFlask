@@ -1,0 +1,9 @@
+Crear archivos requirements.txt
+
+pip freeze > requirements.txt
+
+
+Instalar dependecias del archivos requirements.txt
+
+
+pip freeze > requirements.txt 
